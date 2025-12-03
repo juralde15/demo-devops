@@ -9,7 +9,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -17,9 +16,9 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.0.0
         with:
-          server: ${{ secrets.BRAD }}
-          username: ${{ secrets.BRADOU }}
-          password: ${{ secrets.BRADY }}
-          local-dir: ./
-          server-dir: /www/mon-site/
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./ # Dossier local à déployer
+          server-dir: /www/mon-site/ # Attention au slash final
           dry-run: false
