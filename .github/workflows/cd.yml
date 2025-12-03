@@ -21,5 +21,5 @@ jobs:
           username: ${{ secrets.BRADY }}
           password: ${{ secrets.BRADOU }}
           local-dir: ./
-          server-dir: /www/mon-site
+          server-dir: /www/mon-site/
           dry-run: false
