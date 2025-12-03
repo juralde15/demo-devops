@@ -1,4 +1,4 @@
-name: Deploy HTML Website via FTPES
+name: Deploy HTML Website
 
 on:
   push:
@@ -9,21 +9,16 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # 1️⃣ Récupérer le code du dépôt
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # 2️⃣ Déployer via FTPES
-      - name: Deploy via FTPES
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.0.0
         with:
-          server: ${{ secrets.FTP_SERVER }} # ftpupload.net
-          username: ${{ secrets.FTP_USERNAME }} # if0_40586865
-          password: ${{ secrets.FTP_PASSWORD }} # mot de passe FTP
-          protocol: ftpes # connexion sécurisée FTPES
-          port: 21 # port FTP standard
-          local-dir: ./ # dossier local à déployer
-          server-dir: /www/mon-site/ # dossier distant, attention au slash final
-          dry-run: false # false pour vrai déploiement
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./ # Dossier local à déployer
+          server-dir: /www/mon-site/ # Attention au slash final
+          dry-run: false
