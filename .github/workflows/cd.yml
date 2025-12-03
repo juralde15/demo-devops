@@ -18,8 +18,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.0.0
         with:
           server: ${{ secrets.BRAD }}
-          username: ${{ secrets.BRADY }}
-          password: ${{ secrets.BRADOU }}
+          username: ${{ secrets.BRADOU }}
+          password: ${{ secrets.BRADY }}
           local-dir: ./
           server-dir: /www/mon-site/
           dry-run: false
