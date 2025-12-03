@@ -17,9 +17,9 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.0.0
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.BRAD }}
+          username: ${{ secrets.BRADY }}
+          password: ${{ secrets.BRADOU }}
           local-dir: ./
           server-dir: /www/mon-site
           dry-run: false
